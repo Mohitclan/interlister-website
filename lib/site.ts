@@ -26,10 +26,14 @@ export const appLinks = {
   products: `${APP_URL}/products`,
 };
 
-/** The business behind InterLister, as shown to customers and payment partners. */
+/**
+ * The business behind InterLister, as shown to customers and payment partners.
+ * Matches the operator named on the app's live /terms, /privacy and /contact
+ * pages, which Razorpay reviewed when it approved this site.
+ */
 export const company = {
-  name: process.env.NEXT_PUBLIC_COMPANY_NAME || "PanScience",
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
+  name: process.env.NEXT_PUBLIC_COMPANY_NAME || "PanScience Innovation",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "launch@panscience.xyz",
 };
 
 export const site = {
