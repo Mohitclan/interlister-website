@@ -85,7 +85,7 @@ export function RealtimeSync() {
   const visibleLogs = logs.filter((l) => t >= l.at);
 
   return (
-    <section ref={ref} aria-labelledby="realtime-title" className="relative py-28 sm:py-36">
+    <section ref={ref} aria-labelledby="realtime-title" className="relative overflow-x-clip py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           id="realtime-title"

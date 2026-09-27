@@ -10,6 +10,7 @@ import { MarketplaceCards } from "@/components/sections/MarketplaceCards";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { DashboardPreview } from "@/components/sections/DashboardPreview";
 import { Trust } from "@/components/sections/Trust";
+import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
@@ -35,6 +36,7 @@ export default function Home() {
         <HowItWorks />
         <DashboardPreview />
         <Trust />
+        <Pricing />
         <FAQ />
         <FinalCTA />
       </main>

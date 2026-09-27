@@ -1,5 +1,5 @@
 import { LogoGlyph } from "@/components/visuals/DashboardMock";
-import { appLinks, optionalLinks } from "@/lib/site";
+import { appLinks, company, legalLinks, optionalLinks } from "@/lib/site";
 
 type Link = { label: string; href: string };
 
@@ -7,11 +7,13 @@ export function Footer() {
   const resources: Link[] = [
     { label: "FAQ", href: "#faq" },
     ...(optionalLinks.docs ? [{ label: "Documentation", href: optionalLinks.docs }] : []),
-    ...(optionalLinks.contactEmail ? [{ label: "Contact", href: `mailto:${optionalLinks.contactEmail}` }] : []),
+    { label: "Contact us", href: legalLinks.contact },
+    ...(company.contactEmail ? [{ label: company.contactEmail, href: `mailto:${company.contactEmail}` }] : []),
   ];
   const legal: Link[] = [
-    ...(optionalLinks.privacy ? [{ label: "Privacy", href: optionalLinks.privacy }] : []),
-    ...(optionalLinks.terms ? [{ label: "Terms", href: optionalLinks.terms }] : []),
+    { label: "Terms of Service", href: legalLinks.terms },
+    { label: "Privacy Policy", href: legalLinks.privacy },
+    { label: "Refund Policy", href: legalLinks.refund },
   ];
 
   const columns: { title: string; links: Link[] }[] = [
@@ -20,12 +22,12 @@ export function Footer() {
       links: [
         { label: "Features", href: "#features" },
         { label: "How It Works", href: "#how-it-works" },
-        { label: "Marketplaces", href: "#marketplaces" },
-        { label: "Dashboard", href: appLinks.dashboard },
+        { label: "Pricing", href: "#pricing" },
+        { label: "Sign in", href: appLinks.login },
       ],
     },
     { title: "Resources", links: resources },
-    ...(legal.length ? [{ title: "Legal", links: legal }] : []),
+    { title: "Legal", links: legal },
   ];
 
   return (
@@ -37,6 +39,7 @@ export function Footer() {
             <span className="text-lg font-semibold tracking-tight">InterLister</span>
           </a>
           <p className="mt-4 max-w-xs text-sm text-muted">One workspace for your marketplace operations.</p>
+          <p className="mt-3 max-w-xs text-sm text-faint">A product of {company.name}.</p>
         </div>
         {columns.map((c) => (
           <nav key={c.title} aria-label={c.title}>
@@ -55,7 +58,7 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-faint sm:flex-row sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} InterLister</p>
+          <p>© {new Date().getFullYear()} {company.name}. InterLister is a product of {company.name}.</p>
           <p>Amazon, Flipkart and Meesho are trademarks of their respective owners. InterLister is not affiliated with them.</p>
         </div>
       </div>

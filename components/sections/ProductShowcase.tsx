@@ -63,7 +63,7 @@ export function ProductShowcase() {
   });
 
   return (
-    <section ref={ref} id="features" aria-labelledby="features-title" className="relative py-28 sm:py-36">
+    <section ref={ref} id="features" aria-labelledby="features-title" className="relative overflow-x-clip py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           id="features-title"

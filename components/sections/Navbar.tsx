@@ -99,25 +99,31 @@ export function Navbar() {
           </ul>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <ButtonLink href={appLinks.dashboard} variant="ghost">
-              Log in
+            <ButtonLink href={appLinks.login} variant="secondary">
+              Sign in
             </ButtonLink>
-            <ButtonLink href={appLinks.dashboard} arrow>
+            <ButtonLink href={appLinks.signUp} arrow>
               Get Started
             </ButtonLink>
           </div>
 
-          <button
-            ref={toggleRef}
-            type="button"
-            className="grid size-10 place-items-center rounded-xl border border-line bg-white/[0.04] lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
-          </button>
+          {/* On phones Sign in stays visible next to the menu, not tucked inside it. */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <ButtonLink href={appLinks.login} variant="secondary">
+              Sign in
+            </ButtonLink>
+            <button
+              ref={toggleRef}
+              type="button"
+              className="grid size-10 place-items-center rounded-xl border border-line bg-white/[0.04]"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
+            </button>
+          </div>
         </nav>
 
         <div
@@ -141,10 +147,10 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-2 grid grid-cols-2 gap-2 border-t border-line pt-3">
-            <ButtonLink href={appLinks.dashboard} variant="secondary" size="lg">
-              Log in
+            <ButtonLink href={appLinks.login} variant="secondary" size="lg">
+              Sign in
             </ButtonLink>
-            <ButtonLink href={appLinks.dashboard} size="lg">
+            <ButtonLink href={appLinks.signUp} size="lg">
               Get Started
             </ButtonLink>
           </div>
